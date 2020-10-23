@@ -6,12 +6,12 @@
       class="mx-auto d-block"
       style="width: 80%"
       alt="linea">
-      <div class="row text-center text-white mt-5">
+      <div class="row text-center text-white mt-5 ml-3 mr-3">
           <div class="col-12 col-md-6">
               <div class="row">
                   <div class="col-2">
                       <ul>
-                          <li class="text-primary">Horario</li>
+                          <li class="azul text-primary"><p class="azul">Horario</p></li>
                           <li class="mt-3 mb-1">07:00</li>
                           <li class="mt-1 mb-1">08:00</li>
                           <li class="mt-1 mb-1">08:30</li>
@@ -28,7 +28,8 @@
                   </div>
                   <div class="col-10">
                       <ul>
-                          <li class="text-primary">Miércoles 18 de noviembre de 2020</li>
+                          <li class="text-primary">
+                              <p class="azul">Miércoles 18 de noviembre de 2020</p></li>
                           <li class="bg-secondary mt-3 mb-1 text-secondary">-</li>
                           <li class="bg-secondary mt-1 mb-1 text-secondary">-</li>
                           <li class="bg-secondary mt-1 mb-1 text-secondary">-</li>
@@ -49,7 +50,7 @@
               <div class="row">
                   <div class="col-2">
                       <ul>
-                          <li class="text-primary">Horario</li>
+                          <li class="text-primary"><p class="azul">Horario</p></li>
                           <li class="mt-3 mb-1">07:00</li>
                           <li class="mt-1 mb-1">08:00</li>
                           <li class="mt-1 mb-1">08:30</li>
@@ -66,7 +67,8 @@
                   </div>
                   <div class="col-10">
                       <ul>
-                          <li class="text-primary">Jueves 19 de noviembre de 2020</li>
+                          <li class="text-primary">
+                              <p class="azul">Jueves 19 de noviembre de 2020</p></li>
                           <li class="bg-white mt-3 mb-1 text-dark">Desayuno</li>
                           <li class="bg-white mt-1 mb-1 text-dark">Check out</li>
                           <li class="bg-white mt-1 mb-1 text-dark">Salida al Autódromo</li>
@@ -98,5 +100,9 @@ export default {
 li{
     list-style: none;
     border-radius: 5px;
+}
+
+li .azul{
+    color: #4bace9;
 }
 </style>

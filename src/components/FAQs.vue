@@ -18,8 +18,8 @@
         aria-controls="collapseOne"
         >
         <div class="row">
-        <div class="col-11 text-left">¿Dónde será el evento?</div>
-        <div class="col-1 text-right">▼</div>
+        <div class="title col-10 text-left">¿Dónde será el evento?</div>
+        <div class="col-2 text-right">▼</div>
         </div>
         </div>
       </h6>
@@ -48,8 +48,8 @@
         aria-controls="collapseTwo"
         >
         <div class="row">
-        <div class="col-11 text-left">¿Qué tengo que hacer para asistir?</div>
-        <div class="col-1 text-right">▼</div>
+        <div class="title col-10 text-left">¿Qué tengo que hacer para asistir?</div>
+        <div class="col-2 text-right">▼</div>
         </div>
         </div>
       </h6>
@@ -79,8 +79,8 @@
         aria-controls="collapseThree"
         >
         <div class="row">
-        <div class="col-11 text-left">¿Cuántas veces puedo registrarme?</div>
-        <div class="col-1 text-right">▼</div>
+        <div class="title col-10 text-left">¿Cuántas veces puedo registrarme?</div>
+        <div class="col-2 text-right">▼</div>
         </div>
         </div>
       </h6>
@@ -110,8 +110,8 @@
         aria-controls="collapseFour"
         >
         <div class="row">
-        <div class="col-11 text-left">¿Necesito llevar algo en específico al evento?</div>
-        <div class="col-1 text-right">▼</div>
+        <div class="title col-10 text-left">¿Necesito llevar algo en específico al evento?</div>
+        <div class="col-2 text-right">▼</div>
         </div>
         </div>
       </h6>
@@ -141,9 +141,9 @@
         aria-controls="collapseFive"
         >
         <div class="row">
-        <div class="col-11 text-left">¿Cuáles serán los protocolos de prevención
+        <div class="title col-10 text-left">¿Cuáles serán los protocolos de prevención
         ante el COVID-19 que se seguirán?</div>
-        <div class="col-1 text-right">▼</div>
+        <div class="col-2 text-right">▼</div>
         </div>
         </div>
       </h6>
@@ -164,7 +164,7 @@
 
   <div class="col-12 col-md-10 offset-md-1">
     <div class="card-header" id="headingSix">
-      <h6 class="mb-0 border-bottom">
+      <h6 class="title mb-0 border-bottom">
         <div
         class="btn btn-link btn-lg btn-block collapsed text-white"
         data-toggle="collapse"
@@ -173,8 +173,8 @@
         aria-controls="collapseSix"
         >
         <div class="row">
-        <div class="col-11 text-left">¿Qué debo hacer si no puedo asistir?</div>
-        <div class="col-1 text-right">▼</div>
+        <div class="title col-10 text-left">¿Qué debo hacer si no puedo asistir?</div>
+        <div class="col-2 text-right">▼</div>
         </div>
         </div>
       </h6>
@@ -195,7 +195,7 @@
 
   <div class="col-12 col-md-10 offset-md-1">
     <div class="card-header" id="headingSeven">
-      <h6 class="mb-0 border-bottom">
+      <h6 class="title mb-0 border-bottom">
         <div
         class="btn btn-link btn-lg btn-block collapsed text-white"
         data-toggle="collapse"
@@ -204,8 +204,8 @@
         aria-controls="collapseSeven"
         >
         <div class="row">
-        <div class="col-11 text-left">¿Cuál es el último día para pedir informes?</div>
-        <div class="col-1 text-right">▼</div>
+        <div class="title col-10 text-left">¿Cuál es el último día para pedir informes?</div>
+        <div class="col-2 text-right">▼</div>
         </div>
         </div>
       </h6>
@@ -235,8 +235,8 @@
         aria-controls="collapseEight"
         >
         <div class="row">
-        <div class="col-11 text-left">¿En dónde puedo recibir más información?</div>
-        <div class="col-1 text-right">▼</div>
+        <div class="title col-10 text-left">¿En dónde puedo recibir más información?</div>
+        <div class="col-2 text-right">▼</div>
         </div>
         </div>
       </h6>
@@ -267,5 +267,9 @@ export default {
 </script>
 
 <style>
+.title {
+  font-weight: normal;
+  font-size: 17px;
+}
 
 </style>

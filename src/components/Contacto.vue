@@ -27,8 +27,8 @@
         </button>
       </form>
       <div class="text-center">
-        <p>Dudas o comentarios</p>
-        <p>55 5555 5555 | contacto@experienciavanesmb.com.mx</p>
+        <small>Dudas o comentarios</small> <br>
+        <small>55 5555 5555 | contacto@experienciavanesmb.com.mx</small>
       </div>
     </div>
 </template>
@@ -42,6 +42,7 @@ export default {
 <style>
 #Contacto {
   color: white;
+  margin-top: 90px;
 }
 
 h1, h2, h3 {

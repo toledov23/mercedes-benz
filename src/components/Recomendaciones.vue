@@ -1,6 +1,6 @@
 <template>
   <div class="container" id="Recomendaciones">
-      <div class="card_2">
+      <div class="card_2 ml-2 mr-2 pt-5 mt-5">
         <h2 class="text-center text-uppercase font-weight-light">Recomendaciones</h2>
         <img
         src="../assets/img/En fondo blanco_linea-23.png"
@@ -61,10 +61,6 @@ export default {
 #Recomendaciones {
   margin-top: 100px;
   margin-bottom: 100px;
-}
-
-h1 {
-  font-family: Corporatea_regular_webfont;
 }
 
 .card_2 {
