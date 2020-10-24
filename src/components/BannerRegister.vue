@@ -20,11 +20,12 @@
               <form class="text-white">
                 <div class="form-group mb-0">
                   <label class="mb-0" for="exampleInputName1">Nombre Completo*</label>
-                  <input type="text" class="form-control" id="exampleInputName1" />
+                  <input v-model="name" type="text" class="form-control" id="exampleInputName1" />
                 </div>
                 <div class="form-group mb-0">
                   <label class="mb-0" for="exampleInputEmail1">Correo Electrónico*</label>
                   <input
+                    v-model="email"
                     type="email"
                     class="form-control"
                     id="exampleInputEmail1"
@@ -34,19 +35,20 @@
                 <div class="form-group mb-0">
                   <label class="mb-0" for="exampleInputPhone1">
                       Número de teléfono móvil (10 dígitos)*</label>
-                  <input type="text" class="form-control" id="exampleInputPhone1" />
+                  <input v-model="phone" type="text" class="form-control" id="exampleInputPhone1" />
                 </div>
                 <div class="form-group mb-0">
                   <label class="mb-0" for="exampleInputDist1">Distribuidor*</label>
-                  <input type="password" class="form-control" id="exampleInputDist1" />
+                  <input
+                    v-model="supplier" type="text" class="form-control" id="exampleInputDist1" />
                 </div>
                 <div class="form-group mb-0">
                   <label class="mb-0" for="exampleInputPuesto1">Puesto*</label>
-                  <input type="password" class="form-control" id="exampleInputPuesto1" />
+                  <input v-model="role" type="text" class="form-control" id="exampleInputPuesto1" />
                 </div>
                 <div class="form-group mb-0">
                   <label class="mb-0" for="exampleInputCity1">Ciudad de origen*</label>
-                  <input type="password" class="form-control" id="exampleInputCity1" />
+                  <input v-model="city" type="text" class="form-control" id="exampleInputCity1" />
                   <small id="emailHelp" class="form-text text-muted"
                     >*Campo obligatorio</small
                   >
@@ -64,7 +66,9 @@
                           <a href="">Aviso de Privacidad*</a></small></label>
                 </div>
                 <div class="text-center text-md-right">
-                <button type="submit" class="btn btn-primary text-uppercase col-6">Aceptar</button>
+
+                <button
+                  @click="register()" class="btn btn-primary text-uppercase col-6">Aceptar</button>
                 </div>
               </form>
             </div>
@@ -75,8 +79,36 @@
 </template>
 
 <script>
+import Auth from '@/services/auth';
+
 export default {
   name: 'BannerLogin',
+
+  data() {
+    return {
+      name: '',
+      email: '',
+      password: '',
+      phone: '',
+      supplier: '',
+      role: '',
+      city: '',
+    };
+  },
+
+  methods: {
+    async register() {
+      await Auth.register({
+        name: this.name,
+        email: this.email,
+        password: this.password,
+        phone: this.phone,
+        supplier: this.supplier,
+        role: this.role,
+        city: this.city,
+      });
+    },
+  },
 };
 </script>
 

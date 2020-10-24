@@ -20,14 +20,14 @@
               <form class="">
                 <div class="form-group col-12">
                   <label for="exampleInputEmail1"></label>
-                  <input type="email" class="form-control" placeholder="Correo Electrónico" />
+                  <input v-model="email" type="email" class="form-control" placeholder="Correo Electrónico" />
                 </div>
                 <div class="form-group col-12">
                   <label for="exampleInputEmail1"></label>
-                  <input type="password" class="form-control" placeholder="Contraseña" />
+                  <input v-model="password" type="password" class="form-control" placeholder="Contraseña" />
                 </div>
                 <button
-                  type="submit"
+                  @click="login()"
                   class="mb-4 mt-2 btn btn-primary
                   text-uppercase col-6 offset-3 col-md-6 offset-md-3"
                 >
@@ -51,8 +51,25 @@
 </template>
 
 <script>
+import Auth from '@/services/auth.js'
 export default {
   name: 'BannerLogin',
+
+  data() {
+    return {
+      email: '',
+      password: '',
+    }
+  },
+
+  methods: {
+    async login() {
+      await Auth.login({
+        email: this.email,
+        password: this.password
+      })
+    }
+  }
 };
 </script>
 
