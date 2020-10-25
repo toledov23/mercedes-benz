@@ -63,12 +63,14 @@
               </p>
             </a>
             <p class="text-center text-white">¿No estás registrado?</p>
+            <router-link to="/register">
             <button
               type="submit"
               class="mb-4 mt-0 btn btn-secondary col-6 offset-3 col-md-6 offset-md-3"
             >
               Regístrate
             </button>
+            </router-link>
           </div>
         </div>
       </div>
