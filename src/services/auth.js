@@ -23,6 +23,7 @@ export default {
   async register(user) {
     const [error, data] = await to(axios.post('/register', user));
     if (error) return [error];
+    localStorage.token = data.data.access_token;
     return [null, data];
   },
 };

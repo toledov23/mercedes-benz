@@ -2,56 +2,84 @@
   <main id="main">
     <div id="banner">
       <div class="container">
-          <div
-            class="row align-items-center
-         justify-content-between justify-content-center"
-          >
-            <div class="col-12 col-md-4 text-center text-md-left">
-              <h1 class="text-white">
-                Experiencia <br />
-                VAN es...
-              </h1>
-              <p class="text-white">
-                Disfrutar conociendo los grandes beneficios y ventajas de Sprinter para tu negocio.
-              </p>
-            </div>
-            <div class="col-12 col-md-4 mt-5">
-              <h2 class="text-center text-white">Bienvenido</h2>
-              <form class="">
-                <div class="form-group col-12">
-                  <label for="exampleInputEmail1"></label>
-                  <input v-model="email" type="email" class="form-control" placeholder="Correo Electrónico" />
+        <div
+          class="row align-items-center justify-content-between justify-content-center"
+        >
+          <div class="col-12 col-md-4 text-center text-md-left">
+            <h1 class="text-white">
+              Experiencia <br />
+              VAN es...
+            </h1>
+            <p class="text-white">
+              Disfrutar conociendo los grandes beneficios y ventajas de Sprinter
+              para tu negocio.
+            </p>
+          </div>
+          <div class="col-12 col-md-4 mt-5">
+            <h2 class="text-center text-white">Bienvenido</h2>
+            <form class="">
+              <div class="form-group col-12">
+                <label for="exampleInputEmail1"></label>
+                <input
+                  v-model.trim="$v.email.$model"
+                  type="email"
+                  class="form-control"
+                  placeholder="Correo Electrónico"
+                />
+                <div
+                  class="error text-white"
+                  v-if="$v.email.$dirty && !$v.email.required">El campo email es requerido.</div>
+                <div
+                  class="error text-white"
+                  v-if="$v.email.$dirty && !$v.email.email">
+                  El campo email debe debe ser un email válido.
                 </div>
-                <div class="form-group col-12">
-                  <label for="exampleInputEmail1"></label>
-                  <input v-model="password" type="password" class="form-control" placeholder="Contraseña" />
+              </div>
+              <div class="form-group col-12">
+                <label for="exampleInputEmail1"></label>
+                <input
+                  v-model.trim="$v.password.$model"
+                  type="password"
+                  class="form-control"
+                  placeholder="Contraseña"
+                />
+                <div
+                  class="error text-white"
+                  v-if="$v.password.$dirty && !$v.password.required">
+                  El campo password es requerido.
                 </div>
-                <button
-                  @click="login()"
-                  class="mb-4 mt-2 btn btn-primary
-                  text-uppercase col-6 offset-3 col-md-6 offset-md-3"
-                >
-                  Entrar
-                </button>
-              </form>
-              <a href="">
-                <p class="text-center text-white mb-5"><u>Olvidé la contraseña</u></p>
-              </a>
-              <p class="text-center text-white">¿No estás registrado?</p>
+              </div>
               <button
-                type="submit"
-                class="mb-4 mt-0 btn btn-secondary col-6 offset-3 col-md-6 offset-md-3">
-                Regístrate
+                @click="login()"
+                :disabled="$v.$invalid"
+                class="mb-4 mt-2 btn btn-primary text-uppercase col-6 offset-3 col-md-6 offset-md-3"
+              >
+                Entrar
               </button>
-            </div>
+            </form>
+            <a href="">
+              <p class="text-center text-white mb-5">
+                <u>Olvidé la contraseña</u>
+              </p>
+            </a>
+            <p class="text-center text-white">¿No estás registrado?</p>
+            <button
+              type="submit"
+              class="mb-4 mt-0 btn btn-secondary col-6 offset-3 col-md-6 offset-md-3"
+            >
+              Regístrate
+            </button>
           </div>
         </div>
+      </div>
     </div>
   </main>
 </template>
 
 <script>
-import Auth from '@/services/auth.js'
+import Auth from '@/services/auth';
+import { required, email } from 'vuelidate/lib/validators';
+
 export default {
   name: 'BannerLogin',
 
@@ -59,17 +87,32 @@ export default {
     return {
       email: '',
       password: '',
-    }
+    };
+  },
+
+  validations: {
+    email: {
+      required,
+      email,
+    },
+    password: {
+      required,
+    },
   },
 
   methods: {
     async login() {
-      await Auth.login({
-        email: this.email,
-        password: this.password
-      })
-    }
-  }
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        console.log('INVAlID');
+      } else {
+        await Auth.login({
+          email: this.email,
+          password: this.password,
+        });
+      }
+    },
+  },
 };
 </script>
 

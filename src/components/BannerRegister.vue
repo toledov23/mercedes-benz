@@ -20,35 +20,78 @@
               <form class="text-white">
                 <div class="form-group mb-0">
                   <label class="mb-0" for="exampleInputName1">Nombre Completo*</label>
-                  <input v-model="name" type="text" class="form-control" id="exampleInputName1" />
+                  <input
+                    v-model.trim="$v.name.$model"
+                    type="text" class="form-control" id="exampleInputName1" />
+                    <div
+                    class="error text-white"
+                    v-if="$v.name.$dirty && !$v.name.required">El campo nombre es requerido.</div>
                 </div>
                 <div class="form-group mb-0">
                   <label class="mb-0" for="exampleInputEmail1">Correo Electrónico*</label>
                   <input
-                    v-model="email"
+                    v-model.trim="$v.email.$model"
                     type="email"
                     class="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                   />
+                  <div
+                    class="error text-white"
+                    v-if="$v.email.$dirty && !$v.email.required">El campo email es requerido.</div>
+                  <div
+                    class="error text-white"
+                    v-if="$v.email.$dirty && !$v.email.email">
+                    El campo email debe debe ser un email válido.
+                  </div>
+                </div>
+                <div class="form-group mb-0">
+                  <label class="mb-0" for="exampleInputEmail1">Contraseña</label>
+                  <input
+                    v-model.trim="$v.password.$model"
+                    type="password"
+                    class="form-control"
+                  />
+                  <div
+                    class="error text-white"
+                    v-if="$v.password.$dirty && !$v.password.required">
+                    El campo password es requerido.
+                  </div>
                 </div>
                 <div class="form-group mb-0">
                   <label class="mb-0" for="exampleInputPhone1">
                       Número de teléfono móvil (10 dígitos)*</label>
-                  <input v-model="phone" type="text" class="form-control" id="exampleInputPhone1" />
+                  <input
+                    v-model.trim="$v.phone.$model"
+                    type="number" class="form-control" id="exampleInputPhone1" />
+                  <div
+                    class="error text-white"
+                    v-if="$v.phone.$dirty && !$v.phone.required">
+                    El campo teléfono es requerido.
+                  </div>
                 </div>
                 <div class="form-group mb-0">
                   <label class="mb-0" for="exampleInputDist1">Distribuidor*</label>
                   <input
-                    v-model="supplier" type="text" class="form-control" id="exampleInputDist1" />
+                    v-model.trim="$v.supplier.$model"
+                    type="text" class="form-control" id="exampleInputDist1" />
+                  <div
+                    class="error text-white"
+                    v-if="$v.supplier.$dirty && !$v.supplier.required">
+                    El campo distribuidor es requerido.
+                  </div>
                 </div>
                 <div class="form-group mb-0">
                   <label class="mb-0" for="exampleInputPuesto1">Puesto*</label>
-                  <input v-model="role" type="text" class="form-control" id="exampleInputPuesto1" />
+                  <input
+                    v-model.trim="$v.role.$model"
+                    type="text" class="form-control" id="exampleInputPuesto1" />
                 </div>
                 <div class="form-group mb-0">
                   <label class="mb-0" for="exampleInputCity1">Ciudad de origen*</label>
-                  <input v-model="city" type="text" class="form-control" id="exampleInputCity1" />
+                  <input
+                    v-model.trim="$v.city.$model"
+                    type="text" class="form-control" id="exampleInputCity1" />
                   <small id="emailHelp" class="form-text text-muted"
                     >*Campo obligatorio</small
                   >
@@ -68,6 +111,7 @@
                 <div class="text-center text-md-right">
 
                 <button
+                  :disabled="$v.$invalid"
                   @click="register()" class="btn btn-primary text-uppercase col-6">Aceptar</button>
                 </div>
               </form>
@@ -80,6 +124,7 @@
 
 <script>
 import Auth from '@/services/auth';
+import { required, email } from 'vuelidate/lib/validators';
 
 export default {
   name: 'BannerLogin',
@@ -96,17 +141,47 @@ export default {
     };
   },
 
+  validations: {
+    name: {
+      required,
+    },
+    email: {
+      required,
+      email,
+    },
+    password: {
+      required,
+    },
+    phone: {
+      required,
+    },
+    supplier: {
+      required,
+    },
+    role: {
+      required,
+    },
+    city: {
+      required,
+    },
+  },
+
   methods: {
     async register() {
-      await Auth.register({
-        name: this.name,
-        email: this.email,
-        password: this.password,
-        phone: this.phone,
-        supplier: this.supplier,
-        role: this.role,
-        city: this.city,
-      });
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        console.log('INVAlID');
+      } else {
+        await Auth.register({
+          name: this.name,
+          email: this.email,
+          password: this.password,
+          phone: this.phone,
+          supplier: this.supplier,
+          role: this.role,
+          city: this.city,
+        });
+      }
     },
   },
 };
