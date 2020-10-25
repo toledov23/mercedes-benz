@@ -11,7 +11,8 @@
               <div class="row">
                   <div class="col-2">
                       <ul>
-                          <li class="azul text-primary"><p class="azul">Horario</p></li>
+                          <li style="height: 30px">
+                              <p class="azul">Horario</p></li>
                           <li class="mt-3 mb-1">07:00</li>
                           <li class="mt-1 mb-1">08:00</li>
                           <li class="mt-1 mb-1">08:30</li>
@@ -28,7 +29,7 @@
                   </div>
                   <div class="col-10">
                       <ul>
-                          <li class="text-primary">
+                          <li style="height: 30px">
                               <p class="azul">Miércoles 18 de noviembre de 2020</p></li>
                           <li class="bg-secondary mt-3 mb-1 text-secondary">-</li>
                           <li class="bg-secondary mt-1 mb-1 text-secondary">-</li>
@@ -50,7 +51,8 @@
               <div class="row">
                   <div class="col-2">
                       <ul>
-                          <li class="text-primary"><p class="azul">Horario</p></li>
+                          <li style="height: 30px">
+                              <p class="azul">Horario</p></li>
                           <li class="mt-3 mb-1">07:00</li>
                           <li class="mt-1 mb-1">08:00</li>
                           <li class="mt-1 mb-1">08:30</li>
@@ -67,7 +69,7 @@
                   </div>
                   <div class="col-10">
                       <ul>
-                          <li class="text-primary">
+                          <li style="height: 30px">
                               <p class="azul">Jueves 19 de noviembre de 2020</p></li>
                           <li class="bg-white mt-3 mb-1 text-dark">Desayuno</li>
                           <li class="bg-white mt-1 mb-1 text-dark">Check out</li>

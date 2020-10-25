@@ -14,7 +14,10 @@
           <div class="button">
             <ul class="navbar-nav ml-auto text-center">
               <li class="nav-item">
-                <a class="nav-link border" href="#main"> Iniciar Sesión </a>
+                <router-link
+                to="/login"
+                class="nav-link border"> Iniciar Sesión
+                </router-link>
               </li>
             </ul>
           </div>
