@@ -10,7 +10,7 @@
           <div class="col-12 col-md-6">
               <div class="row">
                   <div class="col-2">
-                      <ul>
+                      <ul style="padding-left: 30px">
                           <li style="height: 30px">
                               <p class="azul">Horario</p></li>
                           <li class="mt-3 mb-1">07:00</li>
@@ -50,7 +50,7 @@
           <div class="col-12 col-md-6">
               <div class="row">
                   <div class="col-2">
-                      <ul>
+                      <ul style="padding-left: 30px">
                           <li style="height: 30px">
                               <p class="azul">Horario</p></li>
                           <li class="mt-3 mb-1">07:00</li>
