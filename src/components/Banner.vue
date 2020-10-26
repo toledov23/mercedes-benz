@@ -1,5 +1,5 @@
 <template>
-      <div class="Main__hero">
+      <div class="Main__hero" id="main">
       <div>
         <img
           class="img-fluid max-width:100% height:auto"
