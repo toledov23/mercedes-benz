@@ -7,15 +7,15 @@
       style="width: 80%"
       alt="linea">
       <form class="mt-5">
-        <div class="form-group col-12 col-md-8 offset-md-2">
+        <div class="form-group col-12 col-md-8 offset-md-2 text-white">
           <label for="exampleInputEmail1">Nombre</label>
           <input type="text" class="form-control" />
         </div>
-        <div class="form-group col-12 col-md-8 offset-md-2">
+        <div class="form-group col-12 col-md-8 offset-md-2 text-white">
           <label for="exampleInputEmail1">Correo electrónico</label>
           <input type="email" class="form-control" />
         </div>
-        <div class="form-group col-12 col-md-8 offset-md-2">
+        <div class="form-group col-12 col-md-8 offset-md-2 text-white">
           <label for="exampleInputEmail1">Comentarios</label>
           <input type="text" class="form-control form-control-lg" />
         </div>
@@ -26,7 +26,7 @@
           Enviar
         </button>
       </form>
-      <div class="text-center">
+      <div class="text-center text-white">
         <small>Dudas o comentarios</small> <br>
         <small>55 5555 5555 | contacto@experienciavanesmb.com.mx</small>
       </div>
@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #Contacto {
   color: white;
   margin-top: 90px;
