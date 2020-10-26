@@ -212,6 +212,12 @@ export default {
     },
   },
 
+  mounted() {
+    if (localStorage.token) {
+      this.$router.push('/home');
+    }
+  },
+
   methods: {
     async register() {
       this.$v.$touch();
