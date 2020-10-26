@@ -37,5 +37,10 @@ export default {
     Contacto,
     Footer,
   },
+  mounted() {
+    if (!localStorage.token || localStorage.token === undefined || localStorage.token === 'undefined') {
+      this.$router.push('/');
+    }
+  },
 };
 </script>

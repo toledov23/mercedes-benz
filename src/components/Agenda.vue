@@ -1,5 +1,5 @@
 <template>
- <div class="container">
+ <div class="container mt-5" id="agenda">
       <h2 class="text-center text-uppercase text-white font-weight-light">Agenda</h2>
       <img
       src="../assets/img/Mediana_linea-22.png"

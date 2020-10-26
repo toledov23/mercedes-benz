@@ -1,7 +1,7 @@
 <template>
   <footer class="mb-3 mt-5 footer">
-      <div class="container">
-        <u><p class="text-center text-md-right mt-2 border-top">https://www.mercedes-benz.com.mx/vans/es</p></u>
+      <div class="container mt-3 border-top">
+        <p class="text-center text-md-right mt-2">https://www.mercedes-benz.com.mx/vans/es</p>
         <div class="row">
           <div class="col-12 col-md-8 text-center text-md-left">
             <a href="">Mercedes-Benz, marca registrada 2020</a> |

@@ -1,5 +1,5 @@
 <template>
-  <div class="container" id="Sede">
+  <div class="container" id="sede">
       <h2 class="text-center text-uppercase text-white">Sede Querétaro</h2>
       <img
       src="../assets/img/Mediana_linea-22.png"

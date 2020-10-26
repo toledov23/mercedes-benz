@@ -86,33 +86,65 @@
                   <input
                     v-model.trim="$v.role.$model"
                     type="text" class="form-control" id="exampleInputPuesto1" />
+                  <div
+                    class="error text-white"
+                    v-if="$v.role.$dirty && !$v.role.required">
+                    El campo puesto es requerido.
+                  </div>
                 </div>
                 <div class="form-group mb-0">
                   <label class="mb-0" for="exampleInputCity1">Ciudad de origen*</label>
                   <input
                     v-model.trim="$v.city.$model"
                     type="text" class="form-control" id="exampleInputCity1" />
+                  <div
+                    class="error text-white"
+                    v-if="$v.city.$dirty && !$v.city.required">
+                    El campo ciudad es requerido.
+                  </div>
                   <small id="emailHelp" class="form-text text-muted"
                     >*Campo obligatorio</small
                   >
                 </div>
                 <div class="form-group form-check mb-0">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                  <input v-model.trim="$v.terms.$model"
+                    type="checkbox" class="form-check-input" id="exampleCheck1" />
                   <label class="form-check-label" for="exampleCheck1">
                       <small>He leído y acepto los
                           <a href="">Términos y Condiciones*</a></small></label>
                 </div>
+                <div
+                  class="error text-white"
+                  v-if="$v.privacy.$dirty && !$v.privacy.required">
+                  Debes aceptar los términos y condiciones
+                </div>
                 <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck2" />
+                  <input v-model.trim="$v.privacy.$model"
+                    type="checkbox" class="form-check-input" id="exampleCheck2" />
                   <label class="form-check-label" for="exampleCheck2">
                       <small>He leído y acepto el
                           <a href="">Aviso de Privacidad*</a></small></label>
+                  <div
+                    class="error text-white"
+                    v-if="$v.supplier.$dirty && !$v.supplier.required">
+                    Debes aceptar el aviso de privacidad
+                  </div>
                 </div>
+
                 <div class="text-center text-md-right">
 
                 <button
+                  v-if="!loading"
                   :disabled="$v.$invalid"
                   @click="register()" class="btn btn-primary text-uppercase col-6">Aceptar</button>
+
+                  <button v-else
+                    class="btn btn-primary col-6"
+                    type="button" disabled>
+                    <span class="spinner-grow spinner-grow-sm"
+                      role="status" aria-hidden="true"></span>
+                    Cargando...
+                  </button>
                 </div>
               </form>
             </div>
@@ -125,6 +157,9 @@
 <script>
 import Auth from '@/services/auth';
 import { required, email } from 'vuelidate/lib/validators';
+import Swal from 'sweetalert2';
+
+const mustBeTrue = (value) => value === true;
 
 export default {
   name: 'BannerLogin',
@@ -138,6 +173,9 @@ export default {
       supplier: '',
       role: '',
       city: '',
+      terms: false,
+      privacy: false,
+      loading: false,
     };
   },
 
@@ -164,24 +202,45 @@ export default {
     city: {
       required,
     },
+    terms: {
+      required,
+      mustBeTrue,
+    },
+    privacy: {
+      required,
+      mustBeTrue,
+    },
   },
 
   methods: {
     async register() {
       this.$v.$touch();
       if (this.$v.$invalid) {
-        console.log('INVAlID');
-      } else {
-        await Auth.register({
-          name: this.name,
-          email: this.email,
-          password: this.password,
-          phone: this.phone,
-          supplier: this.supplier,
-          role: this.role,
-          city: this.city,
+        return 0;
+      }
+      this.loading = true;
+      const [error] = await Auth.register({
+        name: this.name,
+        email: this.email,
+        password: this.password,
+        phone: this.phone,
+        supplier: this.supplier,
+        role: this.role,
+        city: this.city,
+      });
+
+      if (error) {
+        this.loading = false;
+        return Swal.fire({
+          title: 'Oops!',
+          text: 'Algo pasó, intenta más tarde',
+          icon: 'error',
+          confirmButtonText: 'Cool',
         });
       }
+      this.loading = false;
+
+      return this.$router.push('/home');
     },
   },
 };

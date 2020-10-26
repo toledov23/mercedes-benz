@@ -50,11 +50,19 @@
                 </div>
               </div>
               <button
+                v-if="!loading"
                 @click="login()"
                 :disabled="$v.$invalid"
                 class="mb-4 mt-2 btn btn-primary text-uppercase col-6 offset-3 col-md-6 offset-md-3"
               >
                 Entrar
+              </button>
+
+              <button v-else
+                class="mb-4 mt-2 btn btn-primary text-uppercase col-6 offset-3 col-md-6 offset-md-3"
+                type="button" disabled>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Cargando...
               </button>
             </form>
             <a href="">
@@ -81,6 +89,7 @@
 <script>
 import Auth from '@/services/auth';
 import { required, email } from 'vuelidate/lib/validators';
+import Swal from 'sweetalert2';
 
 export default {
   name: 'BannerLogin',
@@ -89,6 +98,7 @@ export default {
     return {
       email: '',
       password: '',
+      loading: false,
     };
   },
 
@@ -107,12 +117,26 @@ export default {
       this.$v.$touch();
       if (this.$v.$invalid) {
         console.log('INVAlID');
-      } else {
-        await Auth.login({
-          email: this.email,
-          password: this.password,
+        return 0;
+      }
+      this.loading = true;
+      const [error] = await Auth.login({
+        email: this.email,
+        password: this.password,
+      });
+
+      if (error) {
+        this.loading = false;
+        return Swal.fire({
+          title: 'Oops!',
+          text: 'Tus credenciales son inválidas',
+          icon: 'error',
+          confirmButtonText: 'Cool',
         });
       }
+      this.loading = false;
+
+      return this.$router.push('/home');
     },
   },
 };

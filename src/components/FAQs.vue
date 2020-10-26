@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5">
+  <div class="container mt-5" id="faqs">
       <h2 class="text-center text-uppercase text-white">FAQs</h2>
       <img
       src="../assets/img/Mediana_linea-22.png"

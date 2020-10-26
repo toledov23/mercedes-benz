@@ -1,6 +1,6 @@
 <template>
-  <div class="container" id="Contacto">
-      <h2 class="text-center text-uppercase">Contacto</h2>
+  <div class="container" id="contacto">
+      <h2 class="text-center text-uppercase text-white">Contacto</h2>
       <img
       src="../assets/img/Mediana_linea-22.png"
       class="mx-auto d-block"

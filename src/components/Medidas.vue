@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container mt-5" id="medidas">
       <h2 class="text-center text-uppercase text-white">Medidas de protocolo
           Covid-19 durante el evento.</h2>
       <img
@@ -14,7 +14,6 @@
 <script>
 export default {
   name: 'Medidas',
-
 };
 </script>
 

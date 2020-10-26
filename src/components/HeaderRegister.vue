@@ -15,7 +15,7 @@
             <ul class="navbar-nav ml-auto text-center">
               <li class="nav-item">
                 <router-link
-                to="/login"
+                to="/"
                 class="nav-link border"> Iniciar Sesión
                 </router-link>
               </li>

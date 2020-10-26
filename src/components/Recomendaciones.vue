@@ -1,5 +1,5 @@
 <template>
-  <div class="container" id="Recomendaciones">
+  <div class="container" id="recomendaciones">
       <div class="card_2 ml-2 mr-2 pt-5 mt-5">
         <h2 class="text-center text-uppercase font-weight-light">Recomendaciones</h2>
         <img
