@@ -18,12 +18,13 @@
                class="mx-auto d-block" style="width: 100%" alt="linea" id="linea">
             </div>
               <p class="col-12 col-md-6 text-center">
-                Disfrutar conociendo los grandes beneficios y ventajas de
+                Disfrutar conociendo los grandes beneficios <br> y ventajas de
                 Sprinter para tu negocio.
               </p>
           </div>
         </div>
       </div>
+      <div id="sede"></div>
     </div>
 </template>
 

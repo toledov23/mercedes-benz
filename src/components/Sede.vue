@@ -1,5 +1,5 @@
 <template>
-  <div class="container" id="sede">
+  <div class="container mt-section">
       <h2 class="text-center text-uppercase text-white">Sede Querétaro</h2>
       <img
       src="../assets/img/Mediana_linea-22.png"
@@ -42,6 +42,8 @@
           </div>
         </div>
       </div>
+
+      <div id="agenda"></div>
     </div>
 </template>
 

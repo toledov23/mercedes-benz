@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5" id="faqs">
+  <div class="container mt-section">
       <h2 class="text-center text-uppercase text-white">FAQs</h2>
       <img
       src="../assets/img/Mediana_linea-22.png"
@@ -31,8 +31,9 @@
     data-parent="#accordion"
     >
       <div class="card-body text-white">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-         terry richardson ad squid.
+        El evento se realizará en la ciudad de Querétaro en el
+         Hotel Doubletree by Hilton y en el Autódromo de Querétaro.
+          En la sección de Sede podrás encontrar mas información.
       </div>
     </div>
   </div>
@@ -61,9 +62,7 @@
     data-parent="#accordion"
     >
       <div class="card-body text-white">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-         terry richardson ad squid.Anim pariatur cliche reprehenderit, enim eiusmod high
-         life accusamus terry richardson ad squid.
+        Solo deberás registrarte y nosotros nos pondremos en contacto contigo.
       </div>
     </div>
   </div>
@@ -79,7 +78,7 @@
         aria-controls="collapseThree"
         >
         <div class="row">
-        <div class="title col-10 text-left">¿Cuántas veces puedo registrarme?</div>
+        <div class="title col-10 text-left">¿Puedo registrar a alguien más?</div>
         <div class="col-2 text-right">▼</div>
         </div>
         </div>
@@ -92,9 +91,10 @@
     data-parent="#accordion"
     >
       <div class="card-body text-white">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-         terry richardson ad squid.Anim pariatur cliche reprehenderit, enim eiusmod high
-         life accusamus terry richardson ad squid.
+        No, ya que la invitación es personalizada y únicamente
+         se permite el registro a quienes hayan recibido
+          invitación directa de parte de Mercedes Benz.
+           Los registros que se generen sin haber recibido invitación no serán tomados en cuenta.
       </div>
     </div>
   </div>
@@ -123,9 +123,7 @@
     data-parent="#accordion"
     >
       <div class="card-body text-white">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-         terry richardson ad squid.Anim pariatur cliche reprehenderit, enim eiusmod high
-         life accusamus terry richardson ad squid.
+        En la sección de recomendaciones encontrarás valiosos tips.
       </div>
     </div>
   </div>
@@ -155,9 +153,9 @@
     data-parent="#accordion"
     >
       <div class="card-body text-white">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-         terry richardson ad squid.Anim pariatur cliche reprehenderit, enim eiusmod high
-         life accusamus terry richardson ad squid.
+        Te invitamos a conocer todos los protocolos que estaremos
+         considerando para toda tu estancia con nosotros
+          en la sección de Medidas COVID-19.
       </div>
     </div>
   </div>
@@ -186,9 +184,7 @@
     data-parent="#accordion"
     >
       <div class="card-body text-white">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-         terry richardson ad squid.Anim pariatur cliche reprehenderit, enim eiusmod high
-         life accusamus terry richardson ad squid.
+        Favor de enviar un correo o llamar a nuestro contact center al 56 1838 5175.
       </div>
     </div>
   </div>
@@ -204,7 +200,8 @@
         aria-controls="collapseSeven"
         >
         <div class="row">
-        <div class="title col-10 text-left">¿Cuál es el último día para pedir informes?</div>
+        <div class="title col-10 text-left">¿Qué tengo que hacer si tengo que
+         cambiar mi lugar con alguien mas?</div>
         <div class="col-2 text-right">▼</div>
         </div>
         </div>
@@ -217,9 +214,7 @@
     data-parent="#accordion"
     >
       <div class="card-body text-white">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-         terry richardson ad squid.Anim pariatur cliche reprehenderit, enim eiusmod high
-         life accusamus terry richardson ad squid.
+        Te pedimos que nos contactes. El último día para realizar cambios es el 13 de noviembre.
       </div>
     </div>
   </div>
@@ -248,9 +243,8 @@
     data-parent="#accordion"
     >
       <div class="card-body text-white">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-         terry richardson ad squid.Anim pariatur cliche reprehenderit, enim eiusmod high
-         life accusamus terry richardson ad squid.
+        Si tienes alguna duda o comentario adicional, envía un mail a
+         contacto@experienciavanesmb.com.mx o llama al 56 1838 5175.
       </div>
     </div>
   </div>

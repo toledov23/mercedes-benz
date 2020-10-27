@@ -4,13 +4,18 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap');
+
 body {
   background-color: black;
-}
 
-@font-face{
-  font-family: Corporatea_regular_webfont;
-  src: "../assets/fonts/corporateacondpro_regular_webfont.ttf";
+  h1, h2, h3, h4 {
+    font-family: 'EB Garamond', serif;
+  }
+
+  .mt-section {
+    margin-top: 8rem;
+  }
 }
 </style>

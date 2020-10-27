@@ -1,5 +1,5 @@
 <template>
- <div class="container mt-5" id="agenda">
+ <div class="container mt-section">
       <h2 class="text-center text-uppercase text-white font-weight-light">Agenda</h2>
       <img
       src="../assets/img/Mediana_linea-22.png"
@@ -40,9 +40,9 @@
                           <li class="bg-secondary mt-1 mb-1 text-secondary">-</li>
                           <li class="bg-secondary mt-1 mb-1 text-secondary">-</li>
                           <li class="bg-secondary mt-1 mb-1 text-secondary">-</li>
-                          <li class="bg-white mt-1 mb-1 text-dark">Check in</li>
+                          <li class="bg-white mt-1 mb-1 text-dark">-</li>
                           <li class="bg-secondary mt-1 mb-1 text-secondary">-</li>
-                          <li class="bg-white mt-1 mb-1 text-dark">Cena</li>
+                          <li class="bg-white mt-1 mb-1 text-dark">-</li>
                       </ul>
                   </div>
               </div>
@@ -70,31 +70,38 @@
                   <div class="col-10">
                       <ul>
                           <li style="height: 30px">
-                              <p class="azul">Jueves 19 de noviembre de 2020</p></li>
-                          <li class="bg-white mt-3 mb-1 text-dark">Desayuno</li>
-                          <li class="bg-white mt-1 mb-1 text-dark">Check out</li>
-                          <li class="bg-white mt-1 mb-1 text-dark">Salida al Autódromo</li>
-                          <li class="bg-white mt-1 mb-1 text-dark">Sesión 1</li>
-                          <li class="bg-white mt-1 mb-1 text-dark">Break</li>
-                          <li class="bg-white mt-1 mb-1 text-dark">Sesión 2</li>
-                          <li class="bg-white mt-1 mb-1 text-dark">Break</li>
-                          <li class="bg-white mt-1 mb-1 text-dark">Sesión 3</li>
-                          <li class="bg-white mt-1 mb-1 text-dark">Comida</li>
+                            <p class="azul">Jueves 19 de noviembre de 2020</p></li>
+                          <li class="bg-white mt-3 mb-1 text-dark">-</li>
+                          <li class="bg-white mt-1 mb-1 text-dark">-</li>
+                          <li class="bg-white mt-1 mb-1 text-dark">-</li>
+                          <li class="bg-white mt-1 mb-1 text-dark">-</li>
+                          <li class="bg-white mt-1 mb-1 text-dark">-</li>
+                          <li class="bg-white mt-1 mb-1 text-dark">-</li>
+                          <li class="bg-white mt-1 mb-1 text-dark">-</li>
+                          <li class="bg-white mt-1 mb-1 text-dark">-</li>
+                          <li class="bg-white mt-1 mb-1 text-dark">-</li>
                           <li class="bg-secondary mt-1 mb-1 text-secondary">-</li>
-                          <li class="bg-white mt-1 mb-1 text-dark">Salida al Aeropuerto</li>
+                          <li class="bg-white mt-1 mb-1 text-dark"></li>
                           <li class="bg-secondary mt-1 mb-1 text-secondary">-</li>
+                          <li class="bg-white mt-1 mb-1 text-dark">-</li>
                       </ul>
                   </div>
               </div>
           </div>
       </div>
+
+      <div id="recomendaciones"></div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Agenda',
-
+  data() {
+    return {
+      activated: false,
+    };
+  },
 };
 </script>
 

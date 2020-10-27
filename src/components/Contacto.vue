@@ -1,5 +1,5 @@
 <template>
-  <div class="container" id="contacto">
+  <div class="container mt-section" id="contacto">
     <h2 class="text-center text-uppercase text-white">Contacto</h2>
     <img
       src="../assets/img/Mediana_linea-22.png"
@@ -66,7 +66,7 @@
     </form>
     <div class="text-center text-white">
       <small>Dudas o comentarios</small> <br />
-      <small>55 5555 5555 | contacto@experienciavanesmb.com.mx</small>
+      <small>56 1838 5175 | contacto@experienciavanesmb.com.mx</small>
     </div>
   </div>
 </template>

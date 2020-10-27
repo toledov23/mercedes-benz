@@ -1,5 +1,5 @@
 <template>
-  <div class="container" id="recomendaciones">
+  <div class="container mt-section">
       <div class="card_2 ml-2 mr-2 pt-5 mt-5">
         <h2 class="text-center text-uppercase font-weight-light">Recomendaciones</h2>
         <img
@@ -48,6 +48,7 @@
           </div>
         </div>
       </div>
+      <div id="medidas"></div>
     </div>
 </template>
 
