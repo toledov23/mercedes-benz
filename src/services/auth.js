@@ -27,10 +27,9 @@ export default {
     return [null, data];
   },
 
-  async contact(user) {
-    const [error, data] = await to(axios.post('/contact', user));
+  async contact(contact) {
+    const [error, data] = await to(axios.post('/contact', contact));
     if (error) return [error];
-    localStorage.token = data.data.access_token;
     return [null, data];
   },
 };

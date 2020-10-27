@@ -122,7 +122,6 @@ export default {
     async login() {
       this.$v.$touch();
       if (this.$v.$invalid) {
-        console.log('INVAlID');
         return 0;
       }
       this.loading = true;
