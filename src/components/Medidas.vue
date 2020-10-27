@@ -9,7 +9,7 @@
         alt="linea">
         <div class="row justify-content-md-center mt-4 mb-3">
           <div class="col-12 col-md-6 text-center">
-            <img src="../assets/img/icon-15.svg" class="idCard mt-1 mb-2" alt="Prev" />
+            <img src="../assets/img/icon-25.svg" class="idCard mt-1 mb-2" alt="Prev" />
             <p class="pl-2 pr-2 mb-0">
               Protocolo COVID-19
             </p>
@@ -17,7 +17,7 @@
             <a href="https://www.hilton.com/es/corporate/coronavirus/">Clic Aquí</a>
           </div>
           <div class="col-12 col-md-6 text-center">
-            <img src="../assets/img/icon-16.svg" class="idCard mt-1 mb-2" alt="Kit" />
+            <img src="../assets/img/icon-26.svg" class="idCard mt-1 mb-2" alt="Kit" />
             <p class="pl-2 pr-2">Protocolo de Sanitización<br>durante el evento</p>
             <a href="">Clic Aquí</a>
           </div>

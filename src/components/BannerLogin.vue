@@ -136,7 +136,7 @@ export default {
           title: 'Oops!',
           text: 'Tus credenciales son inválidas',
           icon: 'error',
-          confirmButtonText: 'Cool',
+          confirmButtonText: 'Ok',
         });
       }
       this.loading = false;
