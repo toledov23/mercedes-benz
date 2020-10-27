@@ -9,18 +9,36 @@
       <form class="mt-5">
         <div class="form-group col-12 col-md-8 offset-md-2 text-white">
           <label for="exampleInputEmail1">Nombre</label>
-          <input type="text" class="form-control" />
+          <input v-model.trim="$v.name.$model" type="text" class="form-control" />
+          <div
+              class="error text-white"
+              v-if="$v.name.$dirty && !$v.name.required">El campo nombre es requerido.</div>
         </div>
         <div class="form-group col-12 col-md-8 offset-md-2 text-white">
           <label for="exampleInputEmail1">Correo electrónico</label>
-          <input type="email" class="form-control" />
+          <input v-model.trim="$v.email.$model"
+          type="email"
+          class="form-control"
+          aria-describedby="emailHelp"/>
+          <div
+            class="error text-white"
+            v-if="$v.email.$dirty && !$v.email.required">El campo email es requerido.</div>
+          <div
+            class="error text-white"
+            v-if="$v.email.$dirty && !$v.email.email">
+            El campo email debe debe ser un email válido.
+            </div>
         </div>
         <div class="form-group col-12 col-md-8 offset-md-2 text-white">
           <label for="exampleInputEmail1">Comentarios</label>
-          <input type="text" class="form-control form-control-lg" />
+          <input v-model.trim="$v.email.$model" type="text" class="form-control form-control-lg"/>
+          <div
+              class="error text-white"
+              v-if="$v.message.$dirty && !$v.message.required">
+              El campo comentarios es requerido.</div>
         </div>
         <button
-          type="submit"
+          @click="contact()"
           class="mb-5 mt-4 btn btn-primary text-uppercase col-6 offset-3 col-md-4 offset-md-4"
         >
           Enviar
@@ -34,8 +52,40 @@
 </template>
 
 <script>
+import Auth from '@/services/auth';
+import { required, email } from 'vuelidate/lib/validators';
+
 export default {
   name: 'Contacto',
+
+  data() {
+    return {
+      name: '',
+      email: '',
+      message: '',
+    };
+  },
+
+  validations: {
+    name: {
+      required,
+    },
+    email: {
+      required,
+      email,
+    },
+    message: {
+      required,
+    },
+  },
+
+  methods: {
+     async register() {
+       await Auth.register({
+         name: this.name,
+         email: this.email,
+         message: this.message,
+       })
 };
 </script>
 

@@ -26,4 +26,11 @@ export default {
     localStorage.token = data.data.access_token;
     return [null, data];
   },
+
+  async contact(user) {
+    const [error, data] = await to(axios.post('/contact', user));
+    if (error) return [error];
+    localStorage.token = data.data.access_token;
+    return [null, data];
+  },
 };
