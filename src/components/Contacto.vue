@@ -80,13 +80,14 @@ export default {
   },
 
   methods: {
-     async register() {
-       await Auth.register({
+     async contact() {
+       await Auth.contact({
          name: this.name,
          email: this.email,
          message: this.message,
        })
-};
+       }
+},
 </script>
 
 <style scoped>
