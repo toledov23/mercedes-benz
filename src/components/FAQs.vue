@@ -93,7 +93,7 @@
       <div class="card-body text-white">
         No, ya que la invitación es personalizada y únicamente
          se permite el registro a quienes hayan recibido
-          invitación directa de parte de Mercedes Benz.
+          invitación directa de parte de Mercedes-Benz Vanes México.
            Los registros que se generen sin haber recibido invitación no serán tomados en cuenta.
       </div>
     </div>

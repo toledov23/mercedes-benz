@@ -116,13 +116,6 @@
                     >*Campo obligatorio</small
                   >
                 </div>
-                <div class="form-group form-check mb-0">
-                  <input v-model.trim="$v.terms.$model"
-                    type="checkbox" class="form-check-input" id="exampleCheck1" />
-                  <label class="form-check-label" for="exampleCheck1">
-                      <small>He leído y acepto los
-                          <a href="">Términos y Condiciones*</a></small></label>
-                </div>
                 <div
                   class="error text-white"
                   v-if="$v.privacy.$dirty && !$v.privacy.required">
@@ -221,10 +214,6 @@ export default {
     },
     city: {
       required,
-    },
-    terms: {
-      required,
-      mustBeTrue,
     },
     privacy: {
       required,

@@ -7,8 +7,7 @@
           <div class="col-12 col-md-8 text-center text-md-left">
             <a href="">Mercedes-Benz, marca registrada 2020</a> |
             <u><a target="_blank" href="https://www.mercedes-benz.com.mx/es/aviso-de-privacidad">
-              Aviso de privacidad</a></u> |
-            <u><a target="_blank" href="">Términos y condiciones </a></u>
+              Aviso de privacidad</a></u>
           </div>
           <div class="col-12 col-md-4 text-center text-md-right">
             <a target="_blank" href="https://www.facebook.com/MBVanesMx/" class="mr-3">
