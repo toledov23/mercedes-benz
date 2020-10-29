@@ -47,6 +47,9 @@
               <li class="nav-item" @click="hideCollapse">
                 <a class="nav-link" href="#contacto"> Contacto </a>
               </li>
+              <li>
+                <a class="blue nav-link" @click="logout"> Cerrar sesión </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -62,6 +65,11 @@ export default {
   methods: {
     hideCollapse() {
       window.$('.navbar-collapse').collapse('hide');
+    },
+    logout() {
+      window.localStorage.clear();
+      localStorage.clear();
+      this.$router.push('/');
     },
   },
 };
@@ -92,5 +100,10 @@ ul li {
 }
 button{
   margin-top: 20px;
+}
+
+.blue {
+  color: #4bace9 !important;
+  cursor: pointer;
 }
 </style>

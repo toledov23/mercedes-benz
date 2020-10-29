@@ -63,15 +63,25 @@
                       Número de teléfono móvil (10 dígitos)*</label>
                   <input
                     v-model.trim="$v.phone.$model"
-                    type="number" class="form-control" id="exampleInputPhone1" />
+                    type="text" class="form-control" id="exampleInputPhone1" />
                   <div
                     class="error text-white"
                     v-if="$v.phone.$dirty && !$v.phone.required">
                     El campo teléfono es requerido.
                   </div>
+                  <div
+                    class="error text-white"
+                    v-if="!$v.phone.numeric">
+                    El campo debe ser numérico.
+                  </div>
+                  <div
+                    class="error text-white"
+                    v-if="!$v.phone.minLength || !$v.phone.maxLength">
+                    El campo debe contener 10 dígitos.
+                  </div>
                 </div>
                 <div class="form-group mb-0">
-                  <label class="mb-0" for="exampleInputDist1">Distribuidor*</label>
+                  <label class="mb-0" for="exampleInputDist1">Nombre de la empresa*</label>
                   <input
                     v-model.trim="$v.supplier.$model"
                     type="text" class="form-control" id="exampleInputDist1" />
@@ -123,7 +133,7 @@
                     type="checkbox" class="form-check-input" id="exampleCheck2" />
                   <label class="form-check-label" for="exampleCheck2">
                       <small>He leído y acepto el
-                          <a href="">Aviso de Privacidad*</a></small></label>
+                          <a target="_blank" href="https://www.mercedes-benz.com.mx/es/aviso-de-privacidad">Aviso de Privacidad*</a></small></label>
                   <div
                     class="error text-white"
                     v-if="$v.supplier.$dirty && !$v.supplier.required">
@@ -156,7 +166,14 @@
 
 <script>
 import Auth from '@/services/auth';
-import { required, email } from 'vuelidate/lib/validators';
+import {
+  required,
+  minLength,
+  maxLength,
+  email,
+  numeric,
+} from 'vuelidate/lib/validators';
+
 import Swal from 'sweetalert2';
 
 const mustBeTrue = (value) => value === true;
@@ -192,6 +209,9 @@ export default {
     },
     phone: {
       required,
+      numeric,
+      minLength: minLength(10),
+      maxLength: maxLength(10),
     },
     supplier: {
       required,
@@ -236,6 +256,14 @@ export default {
       });
 
       if (error) {
+        if (error.response.data.errors.email[0] === 'The email has already been taken.') {
+          return Swal.fire({
+            title: 'Oops!',
+            text: 'Ese correo ya ha sido registrado',
+            icon: 'error',
+            confirmButtonText: 'Cool',
+          });
+        }
         this.loading = false;
         return Swal.fire({
           title: 'Oops!',

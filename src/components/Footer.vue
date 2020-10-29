@@ -6,21 +6,21 @@
         <div class="row">
           <div class="col-12 col-md-8 text-center text-md-left">
             <a href="">Mercedes-Benz, marca registrada 2020</a> |
-            <u><a target="_blank" href="./aviso-privacidad.pdf">
-              Avisos de privacidad</a></u> |
+            <u><a target="_blank" href="https://www.mercedes-benz.com.mx/es/aviso-de-privacidad">
+              Aviso de privacidad</a></u> |
             <u><a target="_blank" href="">Términos y condiciones </a></u>
           </div>
           <div class="col-12 col-md-4 text-center text-md-right">
-            <a target="_blank" href="https://www.facebook.com/MercedesBenzMX/" class="mr-3">
+            <a target="_blank" href="https://www.facebook.com/MBVanesMx/" class="mr-3">
               <img src="../assets/img/icon_redes-17.png" style="width: 20px" alt="Facebook">
             </a>
-            <a target="_blank" href="https://twitter.com/MercedesBenzMx?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="mr-3">
+            <a target="_blank" href="https://twitter.com/MBVanesMx" class="mr-3">
               <img src="../assets/img/icon_redes-18.png" style="width: 20px" alt="Twitter">
             </a>
-            <a target="_blank" href="https://www.instagram.com/mercedesbenzmx/?hl=es-la" class="mr-3">
+            <a target="_blank" href="https://www.instagram.com/mbvanesmx/" class="mr-3">
               <img src="../assets/img/icon_redes-19.png" style="width: 20px" alt="Instagram">
             </a>
-            <a target="_blank" href="https://www.linkedin.com/showcase/mercedes-benz-méxico/">
+            <a target="_blank" href="https://www.linkedin.com/company/mercedes-benzvanesmx/about/">
               <img src="../assets/img/icon_redes-20.png" style="width: 20px" alt="Linkedin">
             </a>
           </div>

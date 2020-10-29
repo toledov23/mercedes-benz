@@ -19,7 +19,7 @@
           <div class="col-12 col-md-6 text-center">
             <img src="../assets/img/icon-26.svg" class="idCard mt-1 mb-2" alt="Kit" />
             <p class="pl-2 pr-2">Protocolo de Sanitización<br>durante el evento</p>
-            <a target="_blank" href="./ficha-tecnica.pdf">Clic Aquí</a>
+            <a target="_blank" href="./protocolos-covid.pdf">Clic Aquí</a>
           </div>
         </div>
       </div>
