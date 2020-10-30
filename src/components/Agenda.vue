@@ -6,6 +6,12 @@
       class="mx-auto d-block"
       style="width: 80%"
       alt="linea">
+
+      <img
+      src="../assets/img/agenda.png"
+      class="mx-auto d-block agenda"
+      alt="linea">
+      <!--
       <div class="row text-center text-white mt-5 ml-3 mr-3">
           <div class="col-12 col-md-6">
               <div class="row">
@@ -90,6 +96,8 @@
           </div>
       </div>
 
+      -->
+
       <div id="recomendaciones"></div>
   </div>
 </template>
@@ -105,7 +113,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 li{
     list-style: none;
     border-radius: 5px;
@@ -113,5 +121,23 @@ li{
 
 li .azul{
     color: #4bace9;
+}
+
+.agenda {
+    width: 80%;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .agenda {
+        width: 70%;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .agenda {
+        width: 45%;
+    }
 }
 </style>
