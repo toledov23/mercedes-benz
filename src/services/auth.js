@@ -15,6 +15,7 @@ export default {
   async login(credentials) {
     const [error, data] = await to(axios.post('/login', credentials));
     if (error) return [error];
+    localStorage.email = credentials.email;
     localStorage.token = data.data.access_token;
     return [null];
   },
@@ -39,4 +40,7 @@ export default {
     return [null, data];
   },
 
+  async getUsers() {
+    return axios.get('/user', { headers: getHeaders() });
+  },
 };

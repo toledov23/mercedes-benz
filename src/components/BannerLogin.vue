@@ -141,6 +141,9 @@ export default {
       }
       this.loading = false;
 
+      if (this.email === 'admin@experienciavanesmb.com.mx') {
+        return this.$router.push('/admin');
+      }
       return this.$router.push('/home');
     },
   },

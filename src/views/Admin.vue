@@ -16,5 +16,11 @@ export default {
     HeaderLogin,
     AdminRegisters,
   },
+
+  mounted() {
+    if (!localStorage.token || localStorage.token === undefined || localStorage.token === 'undefined' || localStorage.email !== 'admin@experienciavanesmb.com.mx') {
+      this.$router.push('/');
+    }
+  },
 };
 </script>

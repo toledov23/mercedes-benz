@@ -1,12 +1,14 @@
 <template>
   <div class="container">
+    <a class="blue nav-link cursor-pointer" @click="logout"> Cerrar sesión </a>
+
     <h2 class="mt-5 text-center text-uppercase text-white font-weight-light">Registros</h2>
     <img src="../assets/img/Mediana_linea-22.png"
     class="mx-auto d-block" style="width: 80%" alt="linea" />
     <table class="table table-bordered table-dark mt-5">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">Id</th>
           <th scope="col">Nombre</th>
           <th scope="col">Correo</th>
           <th scope="col">Número celular</th>
@@ -16,8 +18,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(registro, index) in registros" :key="registro">
-          <th scope="row">{{index}}</th>
+        <tr v-for="registro in registros" :key="registro">
+          <th scope="row">{{registro.id}}</th>
           <td>{{registro.name}}</td>
           <td>{{registro.email}}</td>
           <td>{{registro.phone}}</td>
@@ -40,6 +42,8 @@
 </template>
 
 <script>
+import Auth from '@/services/auth';
+
 export default {
   name: 'AdminRegisters',
 
@@ -65,8 +69,28 @@ export default {
       ],
     };
   },
+
+  created() {
+    this.getUsers();
+  },
+
+  methods: {
+    logout() {
+      window.localStorage.clear();
+      localStorage.clear();
+      this.$router.push('/');
+    },
+    async getUsers() {
+      const users = await Auth.getUsers();
+      this.registros = users.data.data;
+    },
+  },
 };
 
 </script>
 
-<style></style>
+<style>
+.cursor-pointer {
+  cursor: pointer;
+}
+</style>
