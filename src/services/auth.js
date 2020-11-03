@@ -16,6 +16,12 @@ export default {
     const [error, data] = await to(axios.post('/login', credentials));
     if (error) return [error];
     localStorage.token = data.data.access_token;
+    return [null];
+  },
+
+  async recover(email) {
+    const [error] = await to(axios.post('/recover', email));
+    if (error) return [error];
     console.log(getHeaders());
     return [null];
   },
@@ -32,4 +38,5 @@ export default {
     if (error) return [error];
     return [null, data];
   },
+
 };

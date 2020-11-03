@@ -65,7 +65,7 @@
                 Cargando...
               </button>
             </form>
-            <a href="">
+            <a href="/recuperar-cuenta">
               <p class="text-center text-white mb-5">
                 <u>Olvidé la contraseña</u>
               </p>
